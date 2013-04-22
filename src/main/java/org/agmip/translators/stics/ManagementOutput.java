@@ -120,7 +120,7 @@ public class ManagementOutput implements TranslatorOutput {
 				}
 				// TODO verifier le mapping
 				String crid = mgmtDataByEvent.get(EVENT_PLANTING).get("crid") == null ? SticsUtil.defaultValue("crid") : mgmtDataByEvent.get(EVENT_PLANTING).get("crid");
-				String icpcr = IcasaCode.toSticsCode(initialConditions.get("icpcr"));
+				String icpcr = IcasaCode.toSticsCode(MapUtil.getValueOr(initialConditions, "icpcr", ""));
 				initialConditions.put("icpcr", icpcr == null ? IcasaCode.toSticsCode(crid) : icpcr);
 				
 				
@@ -170,8 +170,12 @@ public class ManagementOutput implements TranslatorOutput {
 	
 	private void computeExperimentDuration(HashMap<String, String> initialConditions, Map experiment, ExperimentInfo expInfo) {
 		try {
+                    if (initialConditions.get("icdat") == null) {
+                        log.error("The icdat is not avalaible for parsing");
+                        return;
+                    }
 			Date date = formatter.parse((String) initialConditions.get("icdat"));
-			int duration = Integer.parseInt((String) experiment.get("exp_dur"));
+			int duration = Integer.parseInt((String) MapUtil.getValueOr(experiment, "exp_dur", "-99"));
 			expInfo.setDuration(duration);
 			String julianDaydate = String.valueOf(SticsUtil.getJulianDay(date));
 			initialConditions.put("icdat", julianDaydate);

@@ -4,6 +4,7 @@ import static org.agmip.translators.stics.util.SticsUtil.newFile;
 
 import java.io.File;
 import java.util.Map;
+import org.agmip.common.Functions;
 
 import org.agmip.core.types.TranslatorOutput;
 import org.agmip.translators.stics.util.Report;
@@ -63,7 +64,7 @@ public class SticsOutput implements TranslatorOutput {
 			log.info("Translation done!");
 		} catch (Exception e) {
 			log.error("Unable to generate report");
-			log.error(e.toString());
+                        log.error(Functions.getStackTrace(e));
 		}
 	}
 
