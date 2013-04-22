@@ -51,7 +51,7 @@ public class SticsOutput implements TranslatorOutput {
 		try {
 			weatherOutput = new WeatherOutput();
 			mgmtOutput = new ManagementOutput();
-			log.info("Starting Stics translation ...");
+			log.debug("Starting Stics translation ...");
 			// Run weather and station
 			weatherOutput.writeFile(outputDir, data);
 			// Run management
@@ -60,8 +60,8 @@ public class SticsOutput implements TranslatorOutput {
 			UsmOutput usm = new UsmOutput(mgmtOutput.getExpInfo(), weatherOutput.getStationFilesById(), weatherOutput.getWeatherFilesById());
 			usm.writeFile(outputDir);
 			newFile(Report.getContent(), outputDir, "README.txt");
-			log.info("Generating file : README.txt");
-			log.info("Translation done!");
+			log.debug("Generating file : README.txt");
+			log.debug("Translation done!");
 		} catch (Exception e) {
 			log.error("Unable to generate report");
                         log.error(Functions.getStackTrace(e));

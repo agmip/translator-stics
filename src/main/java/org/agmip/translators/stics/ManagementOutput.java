@@ -78,7 +78,7 @@ public class ManagementOutput implements TranslatorOutput {
 			soilOut = new SoilAndInitOutput(file);
 			for (Map experiment : listOfExperiments) {
 				ExperimentInfo expInfo = new ExperimentInfo((String) experiment.get("exname"), (String) experiment.get("soil_id"), SticsUtil.toWeatherId((String) experiment.get("wst_id")));
-				log.info("Processing experiment : " + expInfo.getExpId());
+				log.debug("Processing experiment : " + expInfo.getExpId());
 				// generating soil and initialization files
 				soilOut.writeFile(experiment, expInfo.getExpId(), soilById.get(expInfo.getSoilId()));
 				expInfo.setIniFile(soilOut.getInitializationFile().getName());

@@ -124,10 +124,10 @@ public class SoilAndInitOutput  {
 			String content = generateInitializationFile(firstLevelInitData, aggregatedSoilData);
 			String iniFileName = soilId + "_" + expId + "_ini" + ".xml";
 			initFile = newFile(content, filePath, iniFileName);
-			log.info("Generating initialization file : "+iniFileName);
+			log.debug("Generating initialization file : "+iniFileName);
 			if(!soilAdded.containsKey(soilId)){
 				// Generate soil file
-				log.info("Generating soil file for : "+soilId);
+				log.debug("Generating soil file for : "+soilId);
 				content = generateSoilFile(firstLevelSoilData, aggregatedSoilData);
 				soilBuffer.append(content);
 				soilAdded.put(soilId, soilId);
@@ -141,7 +141,7 @@ public class SoilAndInitOutput  {
 
 	public void generateSoilsFile() throws IOException {
 		File soilFile = newFile(soilBuffer.append("</sols>").toString(), filePath, "sols.xml");
-		log.info("Generating soil file : "+soilFile.getName());
+		log.debug("Generating soil file : "+soilFile.getName());
 	}
 
 	/**

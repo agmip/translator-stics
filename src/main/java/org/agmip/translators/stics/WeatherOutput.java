@@ -130,7 +130,7 @@ public class WeatherOutput implements TranslatorOutput {
 	private void newClimaticFile(String stationId, String fileName, String year) throws IOException {
 		File currentFile;
 		currentFile = new File(fileName);
-		log.info("Generating weather file : "+currentFile.getName());
+		log.debug("Generating weather file : "+currentFile.getName());
 		weatherFilesById.get(stationId).add(currentFile.getName());
 		writer = new BufferedWriter(new FileWriter(currentFile));
 		previousYear = year;
@@ -211,7 +211,7 @@ public class WeatherOutput implements TranslatorOutput {
 				context = VelocityUtil.fillVelocityContext(firstLevelStationParameters, null);
 				content = VelocityUtil.getInstance().runVelocity(context, STATION_TEMPLATE_FILE);
 				File stationFile = SticsUtil.newFile(content, filePath, city + "_sta.xml");
-				log.info("Generating station file : "+stationFile.getName());
+				log.debug("Generating station file : "+stationFile.getName());
 				stationFilesById.put(stationId, stationFile.getName());
 			}
 		} catch (Exception e) {

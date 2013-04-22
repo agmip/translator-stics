@@ -73,7 +73,7 @@ public class UsmOutput {
 		content = VelocityUtil.getInstance().runVelocity(context, USM_TEMPLATE_FILE);
 		try {
 			newFile(content, file, "usms.xml");
-			log.info("Generating usm file : usms.xml");
+			log.debug("Generating usm file : usms.xml");
 		} catch (IOException e) {
 			log.error("Unable to generate usm file.");
 			log.error(e.toString());
