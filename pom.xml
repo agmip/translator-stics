@@ -10,7 +10,7 @@
 	<parent>
 		<groupId>org.agmip.translators</groupId>
 		<artifactId>translator-dist</artifactId>
-		<version>0.6</version>
+		<version>1.0.2-SNAPSHOT</version>
 	</parent>
 
 	<properties>
@@ -44,7 +44,6 @@
 		<dependency>
 			<groupId>org.agmip</groupId>
 			<artifactId>agmip-core</artifactId>
-			<version>0.15</version>
 		</dependency>
 		<dependency>
 			<groupId>org.agmip</groupId>
