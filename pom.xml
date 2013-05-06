@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>translator-stics</artifactId>
-	<version>1.0</version>
+	<version>1.1-SNAPSHOT</version>
 	<name>translator-stics</name>
 	<url>http://www.agmip.org/</url>
 
@@ -65,6 +65,6 @@
 		<connection>scm:git:git://github.com/agmip/translator-stics.git</connection>
 		<developerConnection>scm:git:git@github.com:agmip/translator-stics.git</developerConnection>
 		<url>https://github.com/agmip/translator-stics</url>
-	  <tag>translator-stics-1.0</tag>
+	  <tag>HEAD</tag>
   </scm>
 </project>
