@@ -10,7 +10,6 @@ import java.util.Map;
 
 import org.agmip.translators.stics.util.SticsUtil;
 import org.agmip.util.JSONAdapter;
-import org.agmip.util.MapUtil;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -58,9 +57,9 @@ public class ModelOutputTest {
 	public void testGetJulianDay() throws ParseException {
 		SimpleDateFormat formatter;
 		formatter = new SimpleDateFormat("yyyyMMdd");
-		assertEquals(1, output.getJulianDay(formatter.parse("19920101")));
-		assertEquals(190, output.getJulianDay(formatter.parse("20120708")));
-		assertEquals(192, output.getJulianDay(formatter.parse("20000710")));
+		assertEquals(1, SticsUtil.getJulianDay(formatter.parse("19920101")));
+		assertEquals(190, SticsUtil.getJulianDay(formatter.parse("20120708")));
+		assertEquals(192, SticsUtil.getJulianDay(formatter.parse("20000710")));
 	}
 
 }
