@@ -39,11 +39,11 @@ public class ManagementOutputTest extends TestCase{
 		return fertilizerList;
 	}
 
-	@Test
-	public void testWrite(){
-		Map data = SticsUtil.getDataFrom(jsonTestFile2);
-		converter.writeFile("", data);
-	}
+//	@Test
+//	public void testWrite(){
+//		Map data = SticsUtil.getDataFrom(jsonTestFile2);
+//		converter.writeFile("", data);
+//	}
 	
 	
 	
